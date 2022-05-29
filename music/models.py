@@ -1,5 +1,9 @@
 from django.db import models
 
+def cover_path(instance, filename):
+    return "cover/" + str(instance.a_name) + filename
+
+
 class Interpret(models.Model):
     name=models.CharField(max_length=50, verbose_name="Jmeno interpreta")
 
@@ -39,6 +43,8 @@ class Album(models.Model):
     autor_a=models.ForeignKey(Interpret, on_delete=models.CASCADE, verbose_name="Interpret")
 
     zanr=models.ForeignKey(Zanr, on_delete=models.CASCADE, verbose_name="Zanr")
+
+    a_foto=models.FileField(upload_to=cover_path, blank=True, null=True, verbose_name="Cover alba")
 
     class Meta:
         ordering = ['a_name']

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+    List
+{% endblock %}
+
+{% block content%}
+<div class="row">
+    {% for Album in alba %}
+    <div class="col-sm-4">
+    <div class="card">
+    <img class="card-img-top img-thumbnail " style="width:50%" src="{{ Album.a_foto.url }}" alt="album cover">
+   
+    <div class="card-body">
+    <h4 class="card-title">{{ Album.a_name }}</h4>
+    <p class="card-text"><strong>Žánr: {{Album.zanr}}</strong></p>
+    <a href="{% url 'alba_detail' Album.pk%}" class="btn btn-primary">Více</a>
+    </div>
+    </div>
+    </div>
+    {% endfor %}
+   </div>
+{%endblock%}

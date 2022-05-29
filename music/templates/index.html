@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="row">
+ {% for Album in alba %}
+ <div class="col-sm-4">
+ <div class="card">
+ <img class="card-img-top img-thumbnail" style="width:70%" src="{{ Album.a_foto.url }}" alt="album cover">
+
+ <div class="card-body">
+ <h4 class="card-title">{{ Album.a_name }}</h4>
+ <p class="card-text"><strong>Žánr: {{Album.zanr}}</strong></p>
+ <a href="{% url 'alba_detail' Album.pk%}" class="btn btn-primary">Více</a>
+ </div>
+ </div>
+ </div>
+ {% endfor %}
+</div>
+<div class="row">
+ <div class="col-sm-12">
+  <hr>
+
+  <strong>Celkový počet alb:</strong> {{ num_alb }}
+  <div> <a href="{% url 'alba'%}" class="font-weight-bold text-dark">Zobrazit více</a></div>
+    <img src="../media/hudba.jpg" alt="Hudbicka" class="img-fluid" style="float: right; width: 35%">
+
+
+ </div>
+</div>
+{% endblock %}

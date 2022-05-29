@@ -1,7 +1,7 @@
 from multiprocessing import context
 
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from music.models import Album
 
@@ -24,7 +24,7 @@ class AlbumListView(ListView):
     context_object_name = 'alba'
     template_name = 'list.html'
 
-class AlbumDetailView(ListView):
+class AlbumDetailView(DetailView):
     model = Album
 
     context_object_name = 'alba_detail'

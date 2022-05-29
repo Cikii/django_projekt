@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+   {{alba_detail.a_name}}
+{% endblock %}
+
+
+{%block content%}
+<div class="row">
+    <div class="col-lg-3">  <img src="{{alba_detail.a_foto.url}}" alt="Album cover" class="img-fluid"> </div>
+    <div class="col-lg-3"> <h1>{{alba_detail.a_name}}</h1>
+    <p> <strong>{{alba_detail.autor_a}}</strong> </p>
+     <p>{{alba_detail.a_rok}} - {{alba_detail.zanr}}</p>
+
+
+
+    </div>
+
+   
+</div>
+{% endblock %}

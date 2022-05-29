@@ -34,7 +34,7 @@
     </main>
     <!-- Zápatí stránky -->
     {% block footer %}
-        <!--{% include "footer.html" %}-->
+        {% include "footer.html" %}
     {% endblock %}
     <!-- Připojení externích JS knihoven -->
     <!-- jQuery library -->
@@ -46,5 +46,6 @@
     <!-- Připravený blok pro vložení/připojení dalších skriptů podle potřeby jednotlivých stránek -->
     {% block scripts %}
     {% endblock %}
+
 </body>
 </html>
